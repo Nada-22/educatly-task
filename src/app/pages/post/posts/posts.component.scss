@@ -64,6 +64,9 @@
             justify-content: center;
             align-items: center;
             padding-inline: 4rem;
+            @media (max-width:450px) {
+                padding-inline: 0 !important;
+            }
 
         }
     }
