@@ -1,0 +1,110 @@
+.article-details {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  
+    .article-header {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      .article-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333333;
+      }
+  
+      .article-meta {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #777777;
+  
+        .author {
+          font-weight: bold;
+          color: #007bff;
+        }
+  
+        .reading-time {
+          font-style: italic;
+        }
+      }
+    }
+  
+    .article-cover {
+      margin: 20px 0;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+  
+    .article-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555555;
+      margin-bottom: 30px;
+    }
+  
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eeeeee;
+  
+      .author-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+  
+        .author-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+  
+        .author-name {
+          font-weight: bold;
+          color: #333333;
+        }
+  
+        .author-website {
+          font-size: 0.8rem;
+          color: #007bff;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .read-more {
+        text-decoration: none;
+        font-size: 0.9rem;
+        color: #ffffff;
+        background: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s;
+  
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+  
+    .copyright {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #aaaaaa;
+    }
+  }
+  

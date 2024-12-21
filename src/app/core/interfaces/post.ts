@@ -7,6 +7,10 @@ type_of: any
     published_timestamp: string | Date,
     cover_image: string,
     social_image: string,
+    slug: string,
+    path: string,
+    url: string,
+    comments_count: 0,
     user: AuthorI
 
 }

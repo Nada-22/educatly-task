@@ -7,7 +7,7 @@ import { inject, Injectable, signal } from '@angular/core';
 })
 export class LoaderService {
 
-  blockUI = signal<boolean>(true);
+  blockUI = signal<boolean>(false);
 
   setAppLoading(loading: boolean) {
     this.blockUI.set(loading)

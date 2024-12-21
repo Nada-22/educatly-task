@@ -6,7 +6,7 @@
     <div class="sub-category">
 
         <p>{{ post().title |maxLength:25}} </p>
-        <i class="pi pi-arrow-up-right"></i>
+        <i class="pi pi-arrow-up-right" [routerLink]="['../',post().id]" [state]=" { postItem: post() }" (click)="storePostItem()"></i>
     </div>
     <p class="desc">{{post().description}}</p>
 

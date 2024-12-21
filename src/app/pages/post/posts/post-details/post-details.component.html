@@ -1,0 +1,34 @@
+<div class="article-details">
+    <header class="article-header">
+      <h1 class="article-title">{{post.title}}</h1>
+      <p class="article-meta">
+        By <span class="author">{{post.user.username}}</span> | Published on {{post.published_timestamp | date:'short'}} | 
+        <span class="reading-time">10 min read</span>
+      </p>
+    </header>
+  
+    <div class="article-cover">
+      <img [src]="post.cover_image" onerror="
+      this.onerror = null; this.src = '/imgs/file-error.jpg'" alt="{{ post.title }}" class="img-fluid post-img" alt="Article Cover" />
+    </div>
+  
+    <div class="article-content">
+      <p>
+        {{post.description}}
+      </p>
+    </div>
+  
+    <footer class="article-footer">
+      <div class="author-info">
+        <img  [src]="post.user.profile_image" alt="Jen Chan" class="author-avatar" />
+        <div>
+          <p class="author-name">{{post.user.name}}</p>
+          <a [href]="post.path" target="_blank" class="author-website">{{post.user.website_url}}</a>
+        </div>
+      </div>
+      <a [href]="post.url" target="_blank" class="read-more">Read Full Post</a>
+    </footer>
+  
+    <p class="copyright">© All rights reserved</p>
+  </div>
+  
