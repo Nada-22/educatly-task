@@ -1,22 +1,24 @@
 <p-card class="post-card">
-    <img [src]="card().image" alt="{{ card().header }}" />
-    <p class="primary-text category">Design</p>
+    <img [src]="post().cover_image" onerror="
+    this.onerror = null; this.src = '/imgs/file-error.jpg';
+        " alt="{{ post().title }}" class="img-fluid post-img" />
+    <p class="primary-text category">{{post().type_of}}</p>
     <div class="sub-category">
 
-        <p >{{ card().subheader }} </p>
+        <p>{{ post().title |maxLength:25}} </p>
         <i class="pi pi-arrow-up-right"></i>
     </div>
-    <p class="desc">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
-    
+    <p class="desc">{{post().description}}</p>
+
 
     <div class="author">
 
-        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" class="mr-2" size="normal" shape="circle" />
+        <p-avatar [image]="post().user.profile_image" class="mr-2" size="normal" shape="circle" />
 
         <div class="author-name">
 
-            <p class="author-name">Belal Ahmed</p>
-            <small class="date">{{'12-12-2024'|date}}</small>
+            <p class="author-name">{{post().user.name}}</p>
+            <small class="date">{{post().published_timestamp|date}}</small>
         </div>
 
     </div>

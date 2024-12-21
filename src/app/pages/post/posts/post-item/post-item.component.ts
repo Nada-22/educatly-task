@@ -1,7 +1,9 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, SlicePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
 import { CardModule } from 'primeng/card';
+import { PostI } from '../../../../core/interfaces/post';
+import { MaxLengthPipe } from '../../../../shared/pipes/maxlength.pipe';
 
 @Component({
   selector: 'app-post-item',
@@ -9,11 +11,13 @@ import { CardModule } from 'primeng/card';
   imports: [
     CardModule,
     AvatarModule,
-    DatePipe
+    DatePipe,
+    SlicePipe,
+    MaxLengthPipe
   ],
   templateUrl: './post-item.component.html',
   styleUrl: './post-item.component.scss'
 })
 export class PostItemComponent {
-  card=input.required<any>()
+  post = input.required<PostI>()
 }

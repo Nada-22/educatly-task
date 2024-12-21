@@ -1,7 +1,15 @@
 .post-card {
     margin: 1rem;
     text-align: start;
+    height: 100%;
 
+    .post-img{
+        height: 150px;
+        text-align: center;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 8px;
+    }
     .category {
         font-size: 14px;
         font-weight: bold;
