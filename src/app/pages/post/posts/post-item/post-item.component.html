@@ -1,1 +1,23 @@
-<p>post-item works!</p>
+<p-card class="post-card">
+    <img [src]="card().image" alt="{{ card().header }}" />
+    <p class="primary-text category">Design</p>
+    <div class="sub-category">
+
+        <p >{{ card().subheader }} </p>
+        <i class="pi pi-arrow-up-right"></i>
+    </div>
+    <p class="desc">How do you create compelling presentations that wow your colleagues and impress your managers?</p>
+    
+
+    <div class="author">
+
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" class="mr-2" size="normal" shape="circle" />
+
+        <div class="author-name">
+
+            <p class="author-name">Belal Ahmed</p>
+            <small class="date">{{'12-12-2024'|date}}</small>
+        </div>
+
+    </div>
+</p-card>

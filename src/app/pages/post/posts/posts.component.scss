@@ -1,0 +1,101 @@
+.posts-page {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+
+        .level-1 {
+            background-color: var(--bg-color);
+            min-height: 60vh;
+        }
+
+        // .level {
+        //     position: relative;
+        //     width: 100%;
+        //     height: 200px; // Adjust height as needed
+
+        //     // Level 1
+        //     &.level-1 {
+        //         background: linear-gradient(135deg, #6c63ff, #ecebff);
+        //     }
+
+        //     // Level 2 (with curve)
+        //     &.level-2 {
+        //         background: linear-gradient(135deg, #ecebff, #dcd9f0);
+        //         clip-path: path("M0,100 C300,200 700,0 1000,150 L1000,400 L0,400 Z"
+        //             ); // Adjust the curve points as needed
+        //     }
+
+        //     // Level 3 (with curve)
+        //     &.level-3 {
+        //         height: 300px;
+        //         background: linear-gradient(135deg, #dcd9f0, #f3f3f3);
+        //         clip-path: path("M0,100 C200,50 800,200 1000,100 L1000,400 L0,400 Z"
+        //             ); // Adjust the curve points for a different curve
+        //     }
+        // }
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        gap: 1rem;
+
+        .our-blog {
+            border-radius: 18px;
+            color: var(--secondary-color);
+            background-color: #f3ebff;
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        .cards {
+            justify-content: center;
+            align-items: center;
+            padding-inline: 4rem;
+
+        }
+    }
+}
+
+
+
+
+//     .content {
+//         position: relative;
+//         z-index: 1;
+
+//         h2 {
+//             color: #4a4a4a;
+//             font-size: 2rem;
+//             margin-bottom: 1rem;
+//         }
+
+//         p {
+//             color: #6c757d;
+//             font-size: 1rem;
+//             margin-bottom: 2rem;
+//         }
+
+//         input {
+//             margin-bottom: 3rem;
+//             width: 60%;
+//             padding: 0.5rem;
+//             border-radius: 0.5rem;
+//             border: 1px solid #ddd;
+//         }
+
+
+//     }
+// }

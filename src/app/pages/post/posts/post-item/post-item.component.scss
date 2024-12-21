@@ -1,0 +1,41 @@
+.post-card {
+    margin: 1rem;
+    text-align: start;
+
+    .category {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .sub-category {
+        font-size: 24px;
+        color: #101828;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .desc {
+        font-size: 16px;
+        color: #667085;
+    }
+
+    .author {
+        display: flex;
+        justify-content: start;
+        gap: .5rem;
+        align-items: center;
+        margin-top: 4rem;
+
+        &-name {
+            color: #101828;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .date {
+            color: #667085;
+            font-size: 12px;
+        }
+    }
+}

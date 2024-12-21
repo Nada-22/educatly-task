@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #42307D;
+    --secondary-color: #6941C6;
+
+
+    --bg-color:#F9F5FF;
+   
+}
+
+*:focus{
+    border-color: var(--secondary-color) !important;
+}

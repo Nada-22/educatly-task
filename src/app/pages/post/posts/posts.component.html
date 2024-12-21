@@ -1,1 +1,30 @@
-<p>posts works!</p>
+<div class="posts-page">
+
+    <div class="background">
+        <div class="level level-1"></div>
+        <div class="level level-2"></div>
+        <div class="level level-3"></div>
+    </div>
+
+    <div class="content">
+        <div class="our-blog">
+
+            Our blog
+        </div>
+        <h2 class="primary-text">Resources and insights</h2>
+        <p class="secondary-text">The latest industry news, interviews, technologies, and resources.</p>
+        <p-iconfield>
+            <p-inputicon styleClass="pi pi-search" />
+            <input type="text" pInputText placeholder="Search" />
+        </p-iconfield>
+        <div class="row cards ">
+                @for ( card of cards; track card) {
+                <div class="col-md-4">
+
+               <app-post-item [card]="card"></app-post-item>
+
+                </div>
+                }
+            </div>
+    </div>
+</div>
