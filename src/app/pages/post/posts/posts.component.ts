@@ -1,3 +1,4 @@
+import { LoaderService } from './../../../core/services/loader.service';
 import { PostService } from './../../../core/services/post.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -8,17 +9,18 @@ import { InputIcon } from 'primeng/inputicon';
 
 import { PostItemComponent } from "./post-item/post-item.component";
 import { PostI } from '../../../core/interfaces/post';
+import { EmptyBoxComponent } from "../../../shared/components/empty-box/empty-box.component";
 @Component({
   selector: 'app-posts',
   standalone: true,
   imports: [
-
     RouterModule,
     InputTextModule,
     IconField,
     InputIcon,
-    PostItemComponent
-  ],
+    PostItemComponent,
+    EmptyBoxComponent
+],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss'
 })
@@ -27,6 +29,7 @@ export class PostsComponent implements OnInit {
   posts!: PostI[];
 
   postService = inject(PostService);
+  loaderService = inject(LoaderService);
 
 
   ngOnInit(): void {
@@ -34,13 +37,18 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
+    this.loaderService.setAppLoading(true);
     this.postService.getPosts().subscribe({
       next: (res) => {
 
         this.posts = res;
+        this.loaderService.setAppLoading(false);
+
       },
       error: (err) => {
         console.log(err);
+        this.loaderService.setAppLoading(false);
+
 
       }
     })
