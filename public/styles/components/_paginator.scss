@@ -1,0 +1,18 @@
+.ngx-pagination {
+
+    a:hover {
+        border-radius: 22px;
+        background: var(--bg-color) !important;
+        color: var(--secondary-color) !important;
+
+
+    }
+
+    .current {
+        padding: .1875rem .625rem;
+        background: var(--bg-color) !important;
+        color: var(--secondary-color) !important;
+        cursor: default;
+        border-radius: 22px;
+    }
+}

@@ -1,3 +1,4 @@
+import { ToastService } from './../../../core/services/toast.service';
 import { LoaderService } from './../../../core/services/loader.service';
 import { PostService } from './../../../core/services/post.service';
 import { Component, inject, OnInit } from '@angular/core';
@@ -10,6 +11,9 @@ import { InputIcon } from 'primeng/inputicon';
 import { PostItemComponent } from "./post-item/post-item.component";
 import { PostI } from '../../../core/interfaces/post';
 import { EmptyBoxComponent } from "../../../shared/components/empty-box/empty-box.component";
+import { PaginatorModule } from 'primeng/paginator';
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
+
 @Component({
   selector: 'app-posts',
   standalone: true,
@@ -19,8 +23,11 @@ import { EmptyBoxComponent } from "../../../shared/components/empty-box/empty-bo
     IconField,
     InputIcon,
     PostItemComponent,
-    EmptyBoxComponent
-],
+    EmptyBoxComponent,
+    PaginatorModule,
+    NgxPaginationModule
+
+  ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss'
 })
@@ -30,7 +37,8 @@ export class PostsComponent implements OnInit {
 
   postService = inject(PostService);
   loaderService = inject(LoaderService);
-
+  toastService=inject(ToastService)
+  page = 1;
 
   ngOnInit(): void {
     this.getPosts();
@@ -48,9 +56,13 @@ export class PostsComponent implements OnInit {
       error: (err) => {
         console.log(err);
         this.loaderService.setAppLoading(false);
+        console.log(err);
+        this.toastService.showErrorToast('something wrong happened , please try again later')
+        
 
 
       }
     })
   }
+
 }

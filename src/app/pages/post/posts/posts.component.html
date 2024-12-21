@@ -18,7 +18,7 @@
             <input type="text" pInputText placeholder="Search" />
         </p-iconfield>
         <div class="row cards ">
-            @for ( post of posts; track post) {
+            @for ( post of posts | paginate: { itemsPerPage: 6, currentPage: page }; track post ) {
             <div class="col-md-4">
 
                 <app-post-item [post]="post"></app-post-item>
@@ -27,6 +27,11 @@
             }@empty {
             <app-empty-box></app-empty-box>
             }
+
+            <div class=" flex justify-center mt-4">
+                <pagination-controls (pageChange)="page = $event" [maxSize]="5" [directionLinks]="true"
+                    [autoHide]="true"></pagination-controls>
+            </div>
         </div>
     </div>
 </div>
